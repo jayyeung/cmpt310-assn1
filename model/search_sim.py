@@ -44,6 +44,7 @@ class SearchSim:
                 path = self.reconstructPath(node_parent)
                 return self.printResults(path)
 
+            self.nodes_expanded += 1
             for neighbour in neighbours:
                 neighbour_i = str(neighbour)
 
@@ -54,10 +55,9 @@ class SearchSim:
                     # figure out cost -- dependent on implementation
                     cost = self.getCost(neighbour)
                     fringe.put((cost, neighbour))
-                    self.nodes_expanded += 1
         
         # no more fringe nodes -- no solution
-        return 'ERROR: No solution found.'
+        print('ERROR: No solution found.')
 
     def printResults(self, path):
         print('Total nodes expanded: {}'.format(self.nodes_expanded))
