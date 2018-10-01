@@ -6,7 +6,7 @@ class BFSSim(SearchSim):
         pos1 = pos; pos2 = self.end_pos
         # manhattan distance
         x1 = pos1[0]; x2 = pos2[0]
-        y1 = pos1[1]; y2 = pos2[1]
+        y1 = pos1[1]; y2 = pos2[1] 
         return abs(x1-x2) + abs(y1-y2) 
 
     def getCost(self, next_pos):
@@ -23,14 +23,14 @@ class AStarSim(BFSSim):
 
 
 # Running the searches
-testData = './data/assn1.txt'      
+testData = './data/assn1.txt'     
 
-print('\n\nBFS SEARCH\n------------')
+print('\n\nBFS SEARCH\n----------------') 
 bfsSim = BFSSim(testData)
 bfsSim.simulate()
 
-print('\n\nA* SEARCH\n------------')
+print('\n\nA* SEARCH\n----------------')
 aStarSim = AStarSim(testData) 
-aStarSim.simulate() 
+aStarSim.simulate()
 
   
